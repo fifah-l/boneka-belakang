@@ -3,7 +3,7 @@ package com.TokoBoneka.TokoBoneka.model;
 import javax.persistence.*;
 
 @Entity
-@Table
+@Table(name = "admin")
 public class Admin {
 
     @Id

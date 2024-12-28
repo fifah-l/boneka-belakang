@@ -22,28 +22,49 @@ public class Produk {
     @Column(name = "stok")
     private int stok;
 
-    @Column(name = "imageUrl")
-    private String imageUrl;
-
 
     @ManyToOne
     @JoinColumn(name = "id_admin", nullable = false)
     private Admin admin;
 
 
-    public Produk(Long id, Admin admin, String namaBoneka, String deskripsi, double harga) {
-        this.id = id;
+    public Produk(Admin admin, String deskripsi, double harga, Long id, String namaBoneka, int stok) {
         this.admin = admin;
-        this.namaBoneka = namaBoneka;
         this.deskripsi = deskripsi;
         this.harga = harga;
+        this.id = id;
+        this.namaBoneka = namaBoneka;
         this.stok = stok;
-        this.imageUrl = imageUrl;
     }
 
     public Produk() {
 
     }
+
+    public Admin getAdmin() {
+        return admin;
+    }
+
+    public void setAdmin(Admin admin) {
+        this.admin = admin;
+    }
+
+    public String getDeskripsi() {
+        return deskripsi;
+    }
+
+    public void setDeskripsi(String deskripsi) {
+        this.deskripsi = deskripsi;
+    }
+
+    public double getHarga() {
+        return harga;
+    }
+
+    public void setHarga(double harga) {
+        this.harga = harga;
+    }
+
     public Long getId() {
         return id;
     }
@@ -60,33 +81,11 @@ public class Produk {
         this.namaBoneka = namaBoneka;
     }
 
-    public String getDeskripsi() {
-        return deskripsi;
+    public int getStok() {
+        return stok;
     }
 
-    public void setDeskripsi(String deskripsi) {
-        this.deskripsi = deskripsi;
+    public void setStok(int stok) {
+        this.stok = stok;
     }
-
-    public Admin getAdmin() {
-        return admin;
-    }
-
-    public void setAdmin(Admin admin) {
-        this.admin = admin;
-    }
-
-    public double getHarga(){return harga; }
-
-    public void setHarga(double harga){this.harga = harga; }
-
-    public int getStok(){return stok; }
-
-    public void setStok(int stok){this.stok = stok; }
-
-    public String getImageUrl(){return imageUrl; }
-
-    public void setImageUrl(String imageUrl){this.imageUrl = imageUrl; }
-
-
 }

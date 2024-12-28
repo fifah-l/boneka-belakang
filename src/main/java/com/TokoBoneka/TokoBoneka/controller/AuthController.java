@@ -1,4 +1,5 @@
 package com.TokoBoneka.TokoBoneka.controller;
+
 import com.TokoBoneka.TokoBoneka.model.LoginRequest;
 import com.TokoBoneka.TokoBoneka.securityNew.JwtTokenUtil;
 import com.TokoBoneka.TokoBoneka.service.AuthService;
@@ -33,6 +34,7 @@ public class AuthController {
     public ResponseEntity<?> login(@RequestBody LoginRequest loginRequest) {
         try {
             Map<String, Object> response = authService.authenticate(loginRequest);
+            // Pastikan bahwa response berisi data admin dan token yang sesuai
             return new ResponseEntity<>(response, HttpStatus.OK);
         } catch (BadCredentialsException e) {
             return new ResponseEntity<>("Invalid email or password", HttpStatus.UNAUTHORIZED);
@@ -41,6 +43,4 @@ public class AuthController {
             return new ResponseEntity<>("Server error occurred", HttpStatus.INTERNAL_SERVER_ERROR);
         }
     }
-
-
 }

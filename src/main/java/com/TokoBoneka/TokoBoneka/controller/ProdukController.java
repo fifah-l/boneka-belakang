@@ -47,19 +47,20 @@ public class ProdukController {
         return ResponseEntity.ok(savedProduk);
     }
 
-    @PutMapping(value = "/produk/editById/{id}")
-    public ResponseEntity<ProdukDTO> editAnggota(
+    @PutMapping("/produk/editById/{id}")
+    public ResponseEntity<ProdukDTO> editProduk(
             @PathVariable Long id,
             @RequestParam Long idAdmin,
-            @RequestPart(value = "anggota") ProdukDTO anggotaDTO) throws IOException {
-
-        ProdukDTO updatedAnggota = produkService.editProdukDTO(id, idAdmin, anggotaDTO);
-        return ResponseEntity.ok(updatedAnggota);
+            @RequestBody ProdukDTO dataprodukDTO) throws IOException {
+        ProdukDTO updatedProduk = produkService.editProdukDTO(id, idAdmin, dataprodukDTO);
+        return ResponseEntity.ok(updatedProduk);
     }
 
     @DeleteMapping("/produk/delete/{id}")
     public ResponseEntity<Void> deleteProduk(@PathVariable Long id) throws IOException {
+        System.out.println("ID yang diterima untuk penghapusan: " + id); // Debug log
         produkService.deleteProduk(id);
         return ResponseEntity.noContent().build();
     }
+
 }
