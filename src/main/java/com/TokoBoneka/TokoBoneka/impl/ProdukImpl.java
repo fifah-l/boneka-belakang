@@ -56,6 +56,7 @@ public class ProdukImpl implements ProdukService {
         produk.setDeskripsi(produkDTO.getDeskripsi());
         produk.setHarga(produkDTO.getHarga());
         produk.setStok(produkDTO.getStok());
+        produk.setImage(produkDTO.getImage()); // Menyimpan URL gambar
 
         Produk savedProduk = produkRepository.save(produk);
 
@@ -66,6 +67,7 @@ public class ProdukImpl implements ProdukService {
         result.setDeskripsi(savedProduk.getDeskripsi());
         result.setHarga(savedProduk.getHarga());
         result.setStok(savedProduk.getStok());
+        result.setImage(savedProduk.getImage()); // Menyimpan URL gambar
 
         return result;
     }
@@ -83,6 +85,7 @@ public class ProdukImpl implements ProdukService {
         existingProduk.setDeskripsi(produkDTO.getDeskripsi());
         existingProduk.setHarga(produkDTO.getHarga());
         existingProduk.setStok(produkDTO.getStok());
+        existingProduk.setImage(produkDTO.getImage()); // Memperbarui URL gambar
 
         Produk updatedProduk = produkRepository.save(existingProduk);
 
@@ -93,9 +96,11 @@ public class ProdukImpl implements ProdukService {
         result.setDeskripsi(updatedProduk.getDeskripsi());
         result.setHarga(updatedProduk.getHarga());
         result.setStok(updatedProduk.getStok());
+        result.setImage(updatedProduk.getImage()); // Menyimpan URL gambar
 
         return result;
     }
+
 
     @Override
     public void deleteProduk(Long id) throws IOException {

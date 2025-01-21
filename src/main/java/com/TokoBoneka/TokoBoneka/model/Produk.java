@@ -22,11 +22,12 @@ public class Produk {
     @Column(name = "stok")
     private int stok;
 
+    @Column(name = "image")
+    private String image;
 
     @ManyToOne
     @JoinColumn(name = "id_admin", nullable = false)
     private Admin admin;
-
 
     public Produk(Admin admin, String deskripsi, double harga, Long id, String namaBoneka, int stok) {
         this.admin = admin;
@@ -35,6 +36,7 @@ public class Produk {
         this.id = id;
         this.namaBoneka = namaBoneka;
         this.stok = stok;
+        this.image = image;
     }
 
     public Produk() {
@@ -88,4 +90,9 @@ public class Produk {
     public void setStok(int stok) {
         this.stok = stok;
     }
+
+    public String getImage() {return image;}
+
+    public void setImage(String image) {this.image = image;}
+
 }

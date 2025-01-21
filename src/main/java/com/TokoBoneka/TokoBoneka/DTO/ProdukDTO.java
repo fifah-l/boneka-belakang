@@ -7,6 +7,7 @@ public class ProdukDTO {
     private String Deskripsi;
     private double Harga;
     private int stok;
+    private String Image;
 
     public Long getIdAdmin() {
         return idAdmin;
@@ -52,8 +53,9 @@ public class ProdukDTO {
         return stok;
     }
 
-    public void setStok(int stok) {
-        this.stok = stok;
-    }
+    public void setStok(int stok) {this.stok = stok;}
 
+    public String getImage() {return Image;}
+
+    public void setImage(String image) {Image = image;}
 }
