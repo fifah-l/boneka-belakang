@@ -6,16 +6,8 @@ public class ProdukDTO {
     private String NamaBoneka;
     private String Deskripsi;
     private double Harga;
-    private int stok;
-    private String Image;
-
-    public Long getIdAdmin() {
-        return idAdmin;
-    }
-
-    public void setIdAdmin(Long idAdmin) {
-        this.idAdmin = idAdmin;
-    }
+    private int Stok;
+    private String fotoUrl;
 
     public Long getId() {
         return id;
@@ -23,6 +15,14 @@ public class ProdukDTO {
 
     public void setId(Long id) {
         this.id = id;
+    }
+
+    public Long getIdAdmin() {
+        return idAdmin;
+    }
+
+    public void setIdAdmin(Long idAdmin) {
+        this.idAdmin = idAdmin;
     }
 
     public String getNamaBoneka() {
@@ -45,17 +45,23 @@ public class ProdukDTO {
         return Harga;
     }
 
-    public void setHarga(double harga) {
-        Harga = harga;
+    public void setHarga(double Harga) {
+        this.Harga = Harga;
     }
 
     public int getStok() {
-        return stok;
+        return Stok;
     }
 
-    public void setStok(int stok) {this.stok = stok;}
+    public void setStok(int Stok) {
+        this.Stok = Stok;
+    }
 
-    public String getImage() {return Image;}
+    public String getFotoUrl() {
+        return fotoUrl;
+    }
 
-    public void setImage(String image) {Image = image;}
+    public void setFotoUrl(String fotoUrl) {
+        this.fotoUrl = fotoUrl;
+    }
 }

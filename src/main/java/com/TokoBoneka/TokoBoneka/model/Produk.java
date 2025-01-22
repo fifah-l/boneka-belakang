@@ -22,77 +22,80 @@ public class Produk {
     @Column(name = "stok")
     private int stok;
 
-    @Column(name = "image")
-    private String image;
+    @Column(name = "foto_url")
+    private String fotoUrl;
 
     @ManyToOne
     @JoinColumn(name = "id_admin", nullable = false)
     private Admin admin;
 
-    public Produk(Admin admin, String deskripsi, double harga, Long id, String namaBoneka, int stok) {
-        this.admin = admin;
-        this.deskripsi = deskripsi;
-        this.harga = harga;
-        this.id = id;
-        this.namaBoneka = namaBoneka;
-        this.stok = stok;
-        this.image = image;
-    }
-
     public Produk() {
+        }
 
-    }
+    public Produk(Long id, Admin admin, String namaBoneka, String deskripsi, double harga, int stok, String fotoUrl) {
+            this.id = id;
+            this.admin = admin;
+            this.namaBoneka = namaBoneka;
+            this.deskripsi = deskripsi;
+            this.harga = harga;
+            this.stok = stok;
+            this.fotoUrl = fotoUrl;
+        }
 
-    public Admin getAdmin() {
-        return admin;
-    }
+        public Long getId() {
+            return id;
+        }
 
-    public void setAdmin(Admin admin) {
-        this.admin = admin;
-    }
+        public void setId(Long id) {
+            this.id = id;
+        }
 
-    public String getDeskripsi() {
-        return deskripsi;
-    }
+        public String getNamaBoneka() {
+            return namaBoneka;
+        }
 
-    public void setDeskripsi(String deskripsi) {
-        this.deskripsi = deskripsi;
-    }
+        public void setNamaBoneka(String namaBoneka) {
+            this.namaBoneka = namaBoneka;
+        }
 
-    public double getHarga() {
-        return harga;
-    }
+        public String getDeskripsi() {
+            return  deskripsi = deskripsi;
+        }
 
-    public void setHarga(double harga) {
-        this.harga = harga;
-    }
+        public void setDeskripsi(String deskripsi) {
+            this.deskripsi = deskripsi;
+        }
 
-    public Long getId() {
-        return id;
-    }
+        public double getHarga() {
+            return harga;
+        }
 
-    public void setId(Long id) {
-        this.id = id;
-    }
+        public void setHarga(double harga) {
+            this.harga = harga;
+        }
 
-    public String getNamaBoneka() {
-        return namaBoneka;
-    }
+        public int getStok() {
+            return  stok;
+        }
 
-    public void setNamaBoneka(String namaBoneka) {
-        this.namaBoneka = namaBoneka;
-    }
+        public void setStok(int stok) {
+            this.stok = stok;
+        }
 
-    public int getStok() {
-        return stok;
-    }
+        public String getFotoUrl() {
+            return fotoUrl;
+        }
 
-    public void setStok(int stok) {
-        this.stok = stok;
-    }
+        public void setFotoUrl(String fotoUrl) {
+            this.fotoUrl = fotoUrl;
+        }
 
-    public String getImage() {return image;}
+        public Admin getAdmin() {
+            return admin;
+        }
 
-    public void setImage(String image) {this.image = image;}
+        public void setAdmin(Admin admin) {
+            this.admin = admin;
+        }
 
 }

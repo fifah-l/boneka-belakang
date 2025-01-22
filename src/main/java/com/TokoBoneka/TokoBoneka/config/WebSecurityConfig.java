@@ -64,6 +64,7 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
             // API controller
             "/api/user/**",
             "/api/admin/**",
+            "/api/produk/**",
             "/api/tokens/**"
     };
 
