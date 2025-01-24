@@ -59,7 +59,7 @@ public class Produk {
         }
 
         public String getDeskripsi() {
-            return  deskripsi = deskripsi;
+            return  this.deskripsi = this.deskripsi;
         }
 
         public void setDeskripsi(String deskripsi) {
